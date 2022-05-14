@@ -19,15 +19,16 @@ repositories {
 }
 
 tasks {
-    withType<KotlinCompile> {
+    "kotlinCompile"(KotlinCompile::class) {
         kotlinOptions {
             jvmTarget = "17"
             kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
             kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.contracts.ExperimentalContracts"
         }
     }
-    withType<JavaCompile> {
+    "javaCompile"(JavaCompile::class) {
         sourceCompatibility = JavaVersion.VERSION_11.toString()
         targetCompatibility = JavaVersion.VERSION_11.toString()
     }
+
 }
