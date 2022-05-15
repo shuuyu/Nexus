@@ -36,6 +36,9 @@ val shadowMe: Configuration by configurations.creating {
 dependencies {
     // Kord-Ex automatically bundles Kord, no need to implement it again.
     shadowMe("com.kotlindiscord.kord.extensions:kord-extensions:1.5.3-SNAPSHOT")
+    // This will automatically bump you to that latest COMMIT, not stable version.
+    // Be sure to check if the latest release has some breaking features that may possibly 
+    // break your bot!
     shadowMe("com.github.myosyn:Nexus:main-SNAPSHOT")
     
     // You can add other dependencies as well, as long as they do not conflict
