@@ -1,3 +1,4 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import org.gradle.kotlin.dsl.application
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -19,16 +20,17 @@ repositories {
 }
 
 tasks {
-    "kotlinCompile"(KotlinCompile::class) {
+    "compileKotlin"(KotlinCompile::class) {
         kotlinOptions {
             jvmTarget = "17"
             kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
             kotlinOptions.freeCompilerArgs += "-opt-in=kotlin.contracts.ExperimentalContracts"
+            kotlinOptions.freeCompilerArgs += "-opt-in=kotlinx.serialization.ExperimentalSerializationApi"
+            kotlinOptions.freeCompilerArgs += "-opt-in=kotlinx.serialization.InternalSerializationApi"
         }
     }
-    "javaCompile"(JavaCompile::class) {
+    "compileJava"(JavaCompile::class) {
         sourceCompatibility = JavaVersion.VERSION_11.toString()
         targetCompatibility = JavaVersion.VERSION_11.toString()
     }
-
 }
