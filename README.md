@@ -4,6 +4,8 @@ Modules required for Nabi to function correctly.
 This dependency introduces two features that would otherwise not be implemented, which are multi-bot support, and also modules
 that are essential for enhancing the user experience. There is no inbetween when it comes to this.
 
+There will come a day where we need to cut off Kord-Extension, and just use vanilla Kord. We'll let you know when this occurs.
+
 Note: This isn't finished! Please do not use this for production.
 
 ## Implementation
