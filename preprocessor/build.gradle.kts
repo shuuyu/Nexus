@@ -23,5 +23,41 @@
  */
 
 plugins {
-    `nexus-modules`
+    id("java-library")
+    `maven-publish`
+    `kotlin-dsl`
+    groovy
+}
+
+gradlePlugin {
+    plugins {
+        create("dev.shuuyu.nexus.preprocessor") {
+            id = "dev.shuuyu.nexus.preprocessor"
+            implementationClass = "dev.shuuyu.nexus.preprocessor.gradle.plugin.preprocessorPlugin"
+            displayName = "preprocessor"
+            description = "I ran out of ideas so I am skidding from people now."
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven(url = "https://jitpack.io")
+}
+
+dependencies {
+
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "dev.shuuyu"
+            artifactId = "Nexus"
+            version = "LATEST"
+
+            from(components["java"])
+        }
+    }
 }
