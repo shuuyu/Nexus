@@ -37,3 +37,8 @@ repositories {
 dependencies {
     dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.6.21")
 }
+
+rootProject.apply {
+    from(rootProject.file("gradle/root.gradle.kts"))
+    from(rootProject.file("gradle/versioning.gradle.kts"))
+}

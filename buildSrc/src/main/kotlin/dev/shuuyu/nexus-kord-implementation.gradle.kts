@@ -4,12 +4,7 @@ plugins {
     kotlin("jvm")
 }
 
-// This is unnecessary but I don't care
-val shadowMe: Configuration by configurations.creating {
-    configurations.implementation.get().extendsFrom(this)
-}
-
 dependencies {
-    shadowMe("dev.kord:kord-core:0.8.x-SNAPSHOT")
-    shadowMe("com.kotlindiscord.kord.extensions:kord-extensions:1.5.3-SNAPSHOT")
+    implementation("dev.kord:kord-core:0.8.x-SNAPSHOT")
+    implementation("com.kotlindiscord.kord.extensions:kord-extensions:1.5.3-SNAPSHOT")
 }

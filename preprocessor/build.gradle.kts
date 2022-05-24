@@ -31,9 +31,9 @@ plugins {
 
 gradlePlugin {
     plugins {
-        create("dev.shuuyu.nexus.preprocessor") {
-            id = "dev.shuuyu.nexus.preprocessor"
-            implementationClass = "dev.shuuyu.nexus.preprocessor.gradle.plugin.preprocessorPlugin"
+        create("com.github.myosyn.nexus.preprocessor") {
+            id = "com.github.myosyn.nexus.preprocessor"
+            implementationClass = "com.github.myosyn.nexus.preprocessor.gradle.plugin.preprocessorPlugin"
             displayName = "preprocessor"
             description = "I ran out of ideas so I am skidding from people now."
         }
@@ -55,7 +55,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "dev.shuuyu"
             artifactId = "Nexus"
-            version = "LATEST"
+            version = "IDK"
 
             from(components["java"])
         }
