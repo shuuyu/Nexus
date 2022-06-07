@@ -44,12 +44,7 @@ rootProject.name = "Nexus"
 include(":modules:time-module")
 include(":modules:user-module")
 include(":preprocessor")
+include(":core")
 
 // Test directory
 include(":test")
-
-fun getJavaVersion() = System.getProperty("java.home")
-
-gradle.settingsEvaluated {
-
-}

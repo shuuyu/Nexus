@@ -25,6 +25,9 @@
 plugins {
     `nexus-modules`
     id("org.jetbrains.dokka") version "1.6.21"
+    base
+    publishing
+    signing
 }
 
 repositories {
