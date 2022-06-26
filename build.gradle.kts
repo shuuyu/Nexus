@@ -24,7 +24,7 @@
 
 plugins {
     `nexus-modules`
-    id("org.jetbrains.dokka") version "1.6.21"
+    id("org.jetbrains.dokka") version "1.7.0"
     base
     publishing
     signing
@@ -41,7 +41,21 @@ dependencies {
     dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.6.21")
 }
 
+tasks {
+    dokkaHtml.configure {
+        outputDirectory.set(buildDir.resolve("dokka"))
+        moduleName.set("Nexus")
+        moduleVersion.set("1.0.0")
+        dokkaSourceSets {
+            configureEach {
+                jdkVersion.set(17)
+            }
+        }
+    }
+}
+
 rootProject.apply {
     from(rootProject.file("gradle/root.gradle.kts"))
     from(rootProject.file("gradle/versioning.gradle.kts"))
+    from(rootProject.file("gradle/module-versioning.gradle.kts"))
 }

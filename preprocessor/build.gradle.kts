@@ -31,11 +31,11 @@ plugins {
 
 gradlePlugin {
     plugins {
-        create("com.github.myosyn.nexus.preprocessor") {
-            id = "com.github.myosyn.nexus.preprocessor"
-            implementationClass = "com.github.myosyn.nexus.preprocessor.gradle.plugin.preprocessorPlugin"
+        create("com.github.myosyn.nexus.reprocess") {
+            id = "com.github.myosyn.nexus.reprocess"
+            implementationClass = "com.github.myosyn.nexus.reprocess.gradle.plugin.preprocessorPlugin"
             displayName = "preprocessor"
-            description = "I ran out of ideas so I am skidding from people now."
+            description = "Add multiple bots within a single repository with ease."
         }
     }
 }
@@ -47,7 +47,10 @@ repositories {
 }
 
 dependencies {
-
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0")
+    implementation("com.guardsquare:proguard-gradle:7.2.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2")
+    implementation("")
 }
 
 publishing {
@@ -58,6 +61,14 @@ publishing {
             version = "IDK"
 
             from(components["java"])
+        }
+    }
+    repositories {
+        maven("https://maven.shuuyu.live/release") {
+            name = "releases"
+            credentials {
+
+            }
         }
     }
 }

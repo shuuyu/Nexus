@@ -23,7 +23,6 @@
  */
 
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import gradle.kotlin.dsl.accessors._e955592cfcca1783c48ac959ec339844.implementation
 import org.gradle.kotlin.dsl.application
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -55,7 +54,7 @@ tasks {
         }
     }
     "compileJava"(JavaCompile::class) {
-        sourceCompatibility = JavaVersion.VERSION_11.toString()
-        targetCompatibility = JavaVersion.VERSION_11.toString()
+        sourceCompatibility = JavaVersion.VERSION_17.toString()
+        targetCompatibility = JavaVersion.VERSION_17.toString()
     }
 }
