@@ -50,7 +50,6 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0")
     implementation("com.guardsquare:proguard-gradle:7.2.2")
     implementation("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2")
-    implementation("")
 }
 
 publishing {
