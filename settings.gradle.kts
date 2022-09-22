@@ -125,7 +125,7 @@ fun VersionCatalogBuilder.kotlinLibs() {
 fun VersionCatalogBuilder.tests() {
     val junitVersion = version("junit", "5.9.0")
 
-    library("mockk", "io.mockk", "mockk").version("1.12.5")
+    library("mockk", "io.mockk", "mockk").version("1.13.1")
     library("kotlinx-coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version("1.6.4")
     library("junit-jupiter-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junitVersion)
 
