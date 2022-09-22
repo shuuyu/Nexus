@@ -23,18 +23,13 @@
  */
 
 plugins {
-    `nexus-modules`
+    kotlin("jvm") version "1.7.10" apply false
+    kotlin("plugin.serialization") version "1.7.10" apply false
+    id("com.github.johnrengelman.shadow") version "7.1.2"
     id("org.jetbrains.dokka") version "1.7.10"
     base
     publishing
     signing
-}
-
-repositories {
-    mavenCentral()
-    mavenLocal()
-    maven("https://maven.kotlindiscord.com/repository/maven-public/")
-    maven("https://oss.sonatype.org/content/repositories/snapshots")
 }
 
 dependencies {
@@ -54,8 +49,17 @@ tasks {
     }
 }
 
-rootProject.apply {
-    from(rootProject.file("gradle/root.gradle.kts"))
-    from(rootProject.file("gradle/versioning.gradle.kts"))
-    from(rootProject.file("gradle/module-versioning.gradle.kts"))
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven("https://maven.kotlindiscord.com/repository/maven-public/")
+        maven("https://oss.sonatype.org/content/repositories/snapshots")
+    }
+
+    rootProject.apply {
+        from(rootProject.file("gradle/root.gradle.kts"))
+        from(rootProject.file("gradle/versioning.gradle.kts"))
+        from(rootProject.file("gradle/module-versioning.gradle.kts"))
+    }
 }

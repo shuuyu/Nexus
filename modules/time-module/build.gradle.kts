@@ -23,6 +23,6 @@
  */
 
 plugins {
-    `nexus-modules`
-    `nexus-kord-implementation`
+    kotlin("jvm")
+    kotlin("plugin.serialization")
 }
