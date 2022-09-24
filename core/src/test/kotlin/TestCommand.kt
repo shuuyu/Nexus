@@ -1,5 +1,8 @@
-import live.shuuyu.nexus.commands.CommandBase
+import live.shuuyu.nexus.commands.EphemeralSlashCommand
 
-class TestCommand : CommandBase() {
+@EphemeralSlashCommand(
+    "test",
+    "A very basic test command!")
+class TestCommand {
 
 }
