@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+import org.gradle.api.tasks.wrapper.Wrapper.DistributionType.BIN
+
 plugins {
     kotlin("jvm") version "1.7.10" apply false
     kotlin("plugin.serialization") version "1.7.10" apply false
@@ -37,6 +39,11 @@ dependencies {
 }
 
 tasks {
+    wrapper {
+        version = "7.5.1"
+        distributionType = BIN
+    }
+
     dokkaHtml.configure {
         outputDirectory.set(buildDir.resolve("dokka"))
         moduleName.set("Nexus")
@@ -50,6 +57,9 @@ tasks {
 }
 
 allprojects {
+    version = "0.0.1"
+    group = "live.shuuyu.nexus"
+
     repositories {
         mavenCentral()
         mavenLocal()

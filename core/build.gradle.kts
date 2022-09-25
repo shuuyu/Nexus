@@ -4,11 +4,6 @@ plugins {
     id("com.github.johnrengelman.shadow")
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 dependencies {
     implementation(libs.bundles.ktor.bundle)
     implementation(libs.bundles.kotlinLibs.bundle)
