@@ -22,8 +22,12 @@
  * SOFTWARE.
  */
 
-package live.shuuyu.nexus
+package live.shuuyu.nexus.commands.user
 
-class PermissionException(
-    val reason: String
-) : Exception()
+import dev.kord.core.entity.Member
+import dev.kord.core.entity.User
+import live.shuuyu.nexus.commands.application.ApplicationCommandContext
+
+abstract class AbstractUserCommand {
+    abstract suspend fun execute(context: ApplicationCommandContext, user: User, member: Member)
+}

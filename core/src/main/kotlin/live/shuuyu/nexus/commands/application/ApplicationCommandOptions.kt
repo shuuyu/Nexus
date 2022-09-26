@@ -22,8 +22,8 @@
  * SOFTWARE.
  */
 
-package live.shuuyu.nexus
+package live.shuuyu.nexus.commands.application
 
-class PermissionException(
-    val reason: String
-) : Exception()
+open class ApplicationCommandOptions {
+
+}
