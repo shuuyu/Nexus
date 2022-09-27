@@ -47,6 +47,7 @@ rootProject.name = "Nexus"
 include(":modules:time-module")
 include(":modules:user-module")
 include(":core")
+include(":bom")
 
 // Test directory
 include(":test")
@@ -70,7 +71,6 @@ dependencyResolutionManagement {
 fun VersionCatalogBuilder.ktor() {
     val ktorVersion = version("ktor", "2.1.0")
 
-    // library("ktor-bom", "io.ktor", "ktor-bom").versionRef(ktorVersion)
     library("ktor-client-json", "io.ktor", "ktor-client-json").versionRef(ktorVersion)
     library("ktor-client-websockets", "io.ktor", "ktor-client-websockets").versionRef(ktorVersion)
     library("ktor-server-core-jvm", "io.ktor", "ktor-server-core-jvm").versionRef(ktorVersion)
@@ -79,7 +79,6 @@ fun VersionCatalogBuilder.ktor() {
     library("ktor-client-content-negotiation-jvm", "io.ktor", "ktor-client-content-negotiation-jvm").versionRef(ktorVersion)
 
     bundle("ktor-bundle", listOf(
-        // "ktor-bom",
         "ktor-client-json",
         "ktor-client-websockets",
         "ktor-server-core-jvm",

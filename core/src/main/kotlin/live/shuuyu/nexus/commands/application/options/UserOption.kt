@@ -22,18 +22,5 @@
  * SOFTWARE.
  */
 
-package live.shuuyu.nexus.commands.application
+package live.shuuyu.nexus.commands.application.options
 
-open class ApplicationCommandOptions {
-    companion object {
-
-    }
-
-    fun string(
-        name: String,
-        description: String,
-    ) {
-
-    }
-
-}
