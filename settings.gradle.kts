@@ -128,7 +128,7 @@ fun VersionCatalogBuilder.tests() {
     library("kotlinx-coroutines-test", "org.jetbrains.kotlinx", "kotlinx-coroutines-test").version("1.6.4")
     library("junit-jupiter-api", "org.junit.jupiter", "junit-jupiter-api").versionRef(junitVersion)
 
-    library("slf4j-simple", "org.slf4j", "slf4j-simple").version("1.7.36")
+    library("slf4j-simple", "org.slf4j", "slf4j-simple").version("2.0.2")
     library("junit-jupiter-engine", "org.junit.jupiter", "junit-jupiter-engine").versionRef(junitVersion)
 
     bundle("test-bundle", listOf(
