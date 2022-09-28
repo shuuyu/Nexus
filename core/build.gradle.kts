@@ -22,6 +22,8 @@
  * SOFTWARE.
  */
 
+description = "Core modules for Nexus, bare metal features are only included in this package."
+
 plugins {
     kotlin("jvm")
     kotlin("plugin.serialization")

@@ -47,7 +47,7 @@ rootProject.name = "Nexus"
 include(":modules:time-module")
 include(":modules:user-module")
 include(":core")
-include(":bom")
+include(":nexus-bom")
 
 // Test directory
 include(":test")
