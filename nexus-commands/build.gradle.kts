@@ -1,11 +1,12 @@
+description = "Adds command functionablility to your project."
+
 plugins {
     kotlin("jvm")
     kotlin("plugin.serialization")
+    id("com.github.johnrengelman.shadow")
 }
 
 dependencies {
-    implementation(project(":core"))
-    implementation(project(":nexus-commands"))
     implementation(libs.bundles.ktor.bundle)
     implementation(libs.bundles.kotlinLibs.bundle)
     implementation(libs.bundles.test.bundle)

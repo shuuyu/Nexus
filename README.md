@@ -37,7 +37,7 @@ dependencies {
     // This will automatically bump you to that latest COMMIT, not stable version.
     // Be sure to check if the latest release has some breaking features that may possibly 
     // break your bot!
-    implementation("live.shuuyu:nexus:0.0.1-SNAPSHOT")
+    implementation("live.shuuyu.nexus:core:0.0.1-SNAPSHOT")
     
     // You can add other dependencies as well, as long as they do not conflict
 }

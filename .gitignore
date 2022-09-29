@@ -3,6 +3,7 @@
 build/
 out/
 dokka/
+.env
 
 # eclipse
 bin

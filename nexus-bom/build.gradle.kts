@@ -31,7 +31,7 @@ the<PublishingExtension>().publications {
 publishing {
     val mavenUser = System.getenv("MAVEN_USER")
     val mavenPassword = System.getenv("MAVEN_PASSWORD")
-    val releaseType = System.getenv("RELEASE")
+    val releaseType = System.getenv("RELEASE_TYPE")
 
     repositories {
         if (mavenUser != null && mavenPassword != null) {
@@ -44,6 +44,13 @@ publishing {
                 }
 
                 "snapshot" -> maven("https://maven.shuuyu.live/snapshots") {
+                    credentials {
+                        username = mavenUser.toString()
+                        password = mavenPassword.toString()
+                    }
+                }
+
+                "private" -> maven("https://maven.shuuyu.live/private") {
                     credentials {
                         username = mavenUser.toString()
                         password = mavenPassword.toString()

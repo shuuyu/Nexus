@@ -48,6 +48,7 @@ include(":modules:time-module")
 include(":modules:user-module")
 include(":core")
 include(":nexus-bom")
+include(":nexus-commands")
 
 // Test directory
 include(":test")
