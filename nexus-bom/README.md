@@ -1,8 +1,9 @@
-# nexus-commands
-Command library for Nexus. 
+# nexus-bom
+Nexus' bill of materials.
 
-# Implementation
+## Implementation
 
+Kotlin Script
 ```kotlin
 plugins {
     kotlin("jvm") version "1.7.10"
@@ -21,4 +22,3 @@ dependencies {
     implementation("live.shuuyu.nexus:nexus-commands:0.0.1-SNAPSHOT")
 }
 ```
-
