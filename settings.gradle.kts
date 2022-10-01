@@ -138,6 +138,5 @@ fun VersionCatalogBuilder.tests() {
         "junit-jupiter-api",
         "slf4j-simple",
         "junit-jupiter-engine",
-    )
-    )
+    ))
 }

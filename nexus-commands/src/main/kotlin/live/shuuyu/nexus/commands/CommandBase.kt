@@ -24,6 +24,8 @@
 
 package live.shuuyu.nexus.commands
 
+import dev.kord.common.entity.Permission
+
 /**
  * Sets up a slash command. This is only executable via using /.
  *
@@ -60,7 +62,7 @@ annotation class UserCommand(
  * Sets up a message command. You require the setup of a prefix in order to use this.
  *
  * @param name The name of the command.
- * @param permissions the permission required to execute the given command.
+ * @param permissions The permission required to execute the given command.
  *
  * @since 0.0.1
  * @author yujin
@@ -85,5 +87,5 @@ annotation class MessageCommand(
 annotation class SubCommand(
     val name: String,
     val description: String,
-    val permissions: LongArray = []
+    val permissions: Long
 )

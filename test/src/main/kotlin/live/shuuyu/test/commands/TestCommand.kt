@@ -8,7 +8,7 @@ import live.shuuyu.nexus.commands.slash.AbstractSlashCommand
 @SlashCommand("test", "A very simple test command!")
 class TestCommand: AbstractSlashCommand() {
     override suspend fun execute(context: ApplicationCommandContext, guild: Guild) {
-        TODO("Not yet implemented")
+
     }
 
 }
