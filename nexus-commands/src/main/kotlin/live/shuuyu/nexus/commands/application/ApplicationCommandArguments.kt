@@ -31,6 +31,12 @@ open class ApplicationCommandArguments {
         val logging = KotlinLogging.logger { }
     }
 
+    /**
+     * Adds a string
+     *
+     * @param name The name of the given argument
+     * @param description The description of the given argument.
+     */
     fun string(
         name: String,
         description: String,
@@ -38,6 +44,12 @@ open class ApplicationCommandArguments {
 
     }
 
+    fun int(
+        name: String,
+        description: String? = "No description provided."
+    ) {
+
+    }
 
 
 }

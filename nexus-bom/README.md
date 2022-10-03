@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    implementation("live.shuuyu.nexus:core:0.0.1-SNAPSHOT")
-    implementation("live.shuuyu.nexus:nexus-commands:0.0.1-SNAPSHOT")
+    implementation("live.shuuyu.nexus:nexus-bom:0.0.1-SNAPSHOT")
+    implementation("live.shuuyu.nexus:core")
 }
 ```

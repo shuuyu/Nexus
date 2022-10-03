@@ -24,7 +24,7 @@
 
 package live.shuuyu.nexus.commands
 
-import dev.kord.common.entity.Permission
+import dev.kord.common.entity.Permissions
 
 /**
  * Sets up a slash command. This is only executable via using /.
@@ -32,16 +32,19 @@ import dev.kord.common.entity.Permission
  * @param name The name of the given command.
  * @param description The description of the given command.
  * @param permissions The permissions required to execute the given command.
+ * @param dmPermissions Allows/Disallows direct messages to be sent with the command.
  *
  * @since 0.0.1
  * @author yujin
  */
-@Target(AnnotationTarget.CLASS)
-annotation class SlashCommand(
+abstract class SlashCommand(
     val name: String,
-    val description: String = "No description was set.",
-    val permissions: LongArray = []
-)
+    val description: String? = "No description provided",
+    val permissions: Permissions?,
+    val dmPermissions: Boolean? = false
+) {
+    abstract suspend fun execute()
+}
 
 /**
  * Sets up a user command.
@@ -52,11 +55,12 @@ annotation class SlashCommand(
  * @since 0.0.1
  * @author yujin
  */
-@Target(AnnotationTarget.CLASS)
-annotation class UserCommand(
+abstract class UserCommand(
     val name: String,
-    val permissions: LongArray = []
-)
+    val permissions: Permissions?
+) {
+
+}
 
 /**
  * Sets up a message command. You require the setup of a prefix in order to use this.
@@ -67,11 +71,12 @@ annotation class UserCommand(
  * @since 0.0.1
  * @author yujin
  */
-@Target(AnnotationTarget.CLASS)
-annotation class MessageCommand(
+abstract class MessageCommand(
     val name: String,
-    val permissions: LongArray = []
-)
+    val permissions: Permissions?
+) {
+
+}
 
 /**
  * Sets up a sub-command.
@@ -87,5 +92,5 @@ annotation class MessageCommand(
 annotation class SubCommand(
     val name: String,
     val description: String,
-    val permissions: Long
+    val permissions: LongArray = []
 )
