@@ -24,9 +24,11 @@
 
 package live.shuuyu.nexus.commands.application
 
-open class ApplicationCommandOptions {
-    companion object {
+import mu.KotlinLogging
 
+open class ApplicationCommandArguments {
+    companion object {
+        val logging = KotlinLogging.logger { }
     }
 
     fun string(
@@ -35,5 +37,7 @@ open class ApplicationCommandOptions {
     ) {
 
     }
+
+
 
 }

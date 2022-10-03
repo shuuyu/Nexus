@@ -59,29 +59,16 @@ publishing {
 
     repositories {
         if (mavenUser != null && mavenPassword != null) {
-            when (releaseType) {
-                "release" -> maven("https://maven.shuuyu.live/releases") {
-                    credentials {
-                        username = mavenUser.toString()
-                        password = mavenPassword.toString()
-                    }
-                }
-
-                "snapshot" -> maven("https://maven.shuuyu.live/snapshots") {
-                    credentials {
-                        username = mavenUser.toString()
-                        password = mavenPassword.toString()
-                    }
-                }
-
-                "private" -> maven("https://maven.shuuyu.live/private") {
-                    credentials {
-                        username = mavenUser.toString()
-                        password = mavenPassword.toString()
-                    }
-                }
-
+            val repository = when (releaseType) {
+                "release" -> maven("https://maven.shuuyu.live/releases")
+                "snapshot" -> maven("https://maven.shuuyu.live/snapshots")
+                "private" -> maven("https://maven.shuuyu.live/private")
                 else -> throw GradleException("No release type provided in .env! Please provide one, then try again.")
+            }
+
+            repository.credentials {
+                username = mavenUser.toString()
+                password = mavenPassword.toString()
             }
         }
     }

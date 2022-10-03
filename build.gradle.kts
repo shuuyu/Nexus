@@ -47,7 +47,7 @@ tasks {
     dokkaHtml.configure {
         outputDirectory.set(buildDir.resolve("dokka"))
         moduleName.set("Nexus")
-        moduleVersion.set("1.0.0")
+        moduleVersion.set("0.0.1")
         dokkaSourceSets {
             configureEach {
                 jdkVersion.set(17)
@@ -63,7 +63,7 @@ allprojects {
     repositories {
         mavenCentral()
         mavenLocal()
-        maven("https://maven.kotlindiscord.com/repository/maven-public/")
+        maven("https://jitpack.io")
         maven("https://oss.sonatype.org/content/repositories/snapshots")
     }
 

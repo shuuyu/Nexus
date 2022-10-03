@@ -49,6 +49,8 @@ include(":modules:user-module")
 include(":core")
 include(":nexus-bom")
 include(":nexus-commands")
+include(":annotations")
+include(":annotation-processor")
 
 // Test directory
 include(":test")
