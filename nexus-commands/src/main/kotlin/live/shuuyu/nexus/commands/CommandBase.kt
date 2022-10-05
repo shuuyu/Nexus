@@ -25,9 +25,10 @@
 package live.shuuyu.nexus.commands
 
 import dev.kord.common.entity.Permissions
+import live.shuuyu.nexus.commands.application.ApplicationCommandContext
 
 /**
- * Sets up a slash command. This is only executable via using /.
+ * Sets up a  slash command. This is only executable via using /.
  *
  * @param name The name of the given command.
  * @param description The description of the given command.
@@ -43,7 +44,7 @@ abstract class SlashCommand(
     val permissions: Permissions?,
     val dmPermissions: Boolean? = false
 ) {
-    abstract suspend fun execute()
+    abstract suspend fun execute(context: ApplicationCommandContext)
 }
 
 /**
@@ -57,7 +58,8 @@ abstract class SlashCommand(
  */
 abstract class UserCommand(
     val name: String,
-    val permissions: Permissions?
+    val permissions: Permissions?,
+    val dmPermissions: Boolean? = false
 ) {
 
 }
@@ -73,7 +75,8 @@ abstract class UserCommand(
  */
 abstract class MessageCommand(
     val name: String,
-    val permissions: Permissions?
+    val permissions: Permissions?,
+    val dmPermissions: Boolean?
 ) {
 
 }
@@ -92,5 +95,6 @@ abstract class MessageCommand(
 annotation class SubCommand(
     val name: String,
     val description: String,
-    val permissions: LongArray = []
+    val permissions: LongArray = [],
+    val dmPermissions: Boolean = false
 )

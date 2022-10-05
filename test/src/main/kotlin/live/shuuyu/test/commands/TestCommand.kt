@@ -4,6 +4,7 @@ import dev.kord.common.entity.Permission
 import dev.kord.common.entity.Permissions
 import live.shuuyu.nexus.commands.SlashCommand
 import live.shuuyu.nexus.commands.application.ApplicationCommandArguments
+import live.shuuyu.nexus.commands.application.ApplicationCommandContext
 
 class TestCommand : SlashCommand(
     name = "test",
@@ -15,7 +16,7 @@ class TestCommand : SlashCommand(
 
     }
 
-    override suspend fun execute() {
-        TODO("Not yet implemented")
+    override suspend fun execute(context: ApplicationCommandContext) {
+
     }
 }
